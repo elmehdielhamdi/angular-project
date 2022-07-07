@@ -1,0 +1,39 @@
+<div class="min-vh-100 d-flex flex-column justify-content-between">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow mb-5">
+    <div class="container">
+      <a class="navbar-brand" href="/recipes">Recipes</a>
+
+      <div class="dropdown dropstart ms-auto">
+        <div
+          class="d-flex justify-content-center align-items-center"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-three-dots-vertical fs-4"></i>
+          <img
+            class="rounded-circle"
+            width="50px"
+            referrerpolicy="no-referrer"
+            src="{{ user.photo ? user.photo : '/assets/user.png' }}"
+          />
+        </div>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <span class="dropdown-item" href="#">{{ user.email }}</span>
+          </li>
+          <li>
+            <a class="dropdown-item" role="button" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+  <footer class="py-4 bg-light shadow-lg mt-5">
+    <div class="container">
+      <p class="m-0 text-center">El Mehdi El Hamdi</p>
+    </div>
+  </footer>
+</div>

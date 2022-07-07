@@ -1,0 +1,30 @@
+<div class="container" *ngIf="recipes">
+  <div
+    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 g-4"
+    id="recipes-list"
+  >
+    <div class="col" *ngFor="let recipe of recipes">
+      <div class="card">
+        <img src="{{ recipe.thumbnail_url }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ recipe.name }}</h5>
+          <p class="card-text">
+            {{ recipe.description }}
+          </p>
+          <a href="/recipes/{{ recipe.id }}" class="btn btn-primary">
+            Open Instructions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="!recipes"
+  class="position-absolute top-50 start-50 translate-middle"
+>
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
