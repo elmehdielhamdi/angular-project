@@ -30,6 +30,7 @@ ng serve
 
 1. Accéder à la [console de Firebase](https://console.firebase.google.com/u/0/)
 2. Créer un nouveau projet et lui attribuer un nom
+3. Activer l'authentification avec mail & mot de passe et Google OAuth
 
 ### Installation et configuration de la connexion Angular - Firebase
 
@@ -131,7 +132,6 @@ const routes: Routes = [
 2. Inscription à l'api des recettes [Tasty](https://rapidapi.com/apidojo/api/tasty/)
 
 3. Ajout de `HttpClientModule`  comme suit pour pouvoir faire des requêtes :
-
    ```javascript
    ...
    import { HttpClientModule } from '@angular/common/http';
@@ -149,7 +149,6 @@ const routes: Routes = [
    ```
 
 4. Modifier `recipes.component.ts` pour chercher les recettes depuis l'api :
-
    ```javascript
    ...
    import { HttpClient } from '@angular/common/http';
@@ -177,7 +176,6 @@ const routes: Routes = [
    ```
 
 5. Modifier `recipe-details.component.ts` pour chercher les instructions et ingrédients de la recette choisie à l'aide de `id`:
-
    ```javascript
    ...
    import { HttpClient } from '@angular/common/http';
